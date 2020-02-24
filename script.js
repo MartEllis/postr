@@ -32,7 +32,6 @@ async function getPopularMovies(pagenum) {
 }
 getPopularMovies(1);
 getPopularMovies(2);
-getPopularMovies(3);
 /////////////////// END DEFAULT PAGE POPULAR MOVIES /////////////
 
 /////////////////// GET LIST OF GENRES FOR SIDEBAR /////////////
