@@ -1,4 +1,8 @@
-$sidebarnavcolor: rgb(78, 78, 243);
+$sidebarnavcolor: rgb(163, 197, 167);
+$sidebartextcolor: rgb(0,0,0);
+$searchbarcolor: rgb(53, 53, 53);
+$accentcolor: rgb(110, 0, 255);
+
 
 * {
     box-sizing: border-box;
@@ -8,87 +12,119 @@ $sidebarnavcolor: rgb(78, 78, 243);
 
 }
 
-body {
-    display: flex;
-    flex-direction: row;
-}
+header {
+    width: 100%;
+    height: 6vh;
+    background-color: $searchbarcolor;
 
-.genre-nav {
-    height: 100vh;
-    min-width: 10vw;
-    background-color: $sidebarnavcolor;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    .header-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
 
-    .logo {
-        width: 80%;
-        height: 80px;
-        background-color: rgb(53, 53, 53);
-        margin: 1rem;
-        flex-basis: 10%;
-    }
-
-    .genres {
-        background-color: pink;
-        flex-basis: 80%;
-        width: 80%;
-
-        .genre-list {
-            list-style: none;
+        .branding {
+            width: 20%;
+            background-color: $accentcolor;
+            color: rgba(255,255,255,0.8);
+        }
+    
+        .filter {
+            width: 80%;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            height: 100%;
-            justify-content: center;
-            white-space: nowrap;
-
-            .genre {
-                text-transform: uppercase;
-                font-weight: 900;
-                font-size: 1.2rem;
-                display: inline-block;
-                cursor: pointer;
+            align-items: center;
+            background-color: $searchbarcolor;
+    
+            .fa-search {
+                margin-left: 2rem;
+                font-size: large;
+                color: rgb(243, 236, 236)
             }
-
-            .selected-genre {
-                font-size: 2.2rem;
+    
+            #search {
+                background-color: $searchbarcolor;
+                padding: .4rem;
+                border: none;
+                margin-left: .2rem;
+                font-size: 1rem;
+                color: rgb(243, 236, 236);
+    
+                &:focus, &:active {
+                    border: none;
+                    outline: none;
+                }
+            }
+    
+            ::placeholder {
+                color: rgb(243, 236, 236);
+                opacity: 0.6;
             }
         }
     }
 }
 
-
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
 
 .main-container {
-    max-height: 100vh;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
 
-    .filter {
-        width: 100vw;
-        background-color: pink;
-        height: 6vh;
+    .genre-nav {
+        height: 100vh;
+        width: 15%;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: space-evenly;
+    
+        .genres {
+            flex-basis: 80%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+    
+            .genre-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                height: 100%;
+                // justify-content: center;
+                white-space: nowrap;
+    
+                .genre {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    display: inline-block;
+                    cursor: pointer;
+                    color: $sidebartextcolor;
+                    transition: ease-in .1s;
+                    padding:.1rem 0;
+    
+                    &:hover {
+                        font-weight: 900;
+                        color: $accentcolor;
+                    }
+                }
+    
+                .selected-genre {
+                    font-size: 1.6rem;
+                    color: $accentcolor;
+                }
+            }
 
-        .fa-search {
-            margin-left: 2rem;
-            font-size: large;
-        }
+            .github {
+                font-size: 2rem;
+                align-self: flex-end;
+                transition: ease-in 1s;
 
-        #search {
-            background-color: none;
-            padding: .4rem;
-            border: none;
-            margin-left: .2rem;
-            font-size: 1rem;
-            width: 100%;
-            background-color: pink;
-
-            &:focus, &:active {
-                border: none;
-                outline: none;
+                &:hover, &:active {
+                    font-size: 3rem;
+                }
             }
         }
     }
@@ -96,11 +132,13 @@ body {
     .posters-main {
         display: flex;
         flex-wrap: wrap;
-        padding: 2rem;
+        width: 85%;
+        margin: 2rem 2rem 0 0;
 
         .poster {
-            flex-basis: 10%;
-            margin-bottom: 2rem;
+            flex-basis: 15%;
+            max-width: 130px;
+            margin: 0 1.5rem 2rem 1.5rem;
 
             img {
                 max-width: 130px;
@@ -118,7 +156,9 @@ body {
             }
         }
     }
+
 }
+
 
 .poster-modal {
     height: 100vh;
@@ -138,10 +178,9 @@ body {
         right: 2rem;
         cursor: pointer;
     }
-    
 
     .modal-image {
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);

@@ -15,7 +15,11 @@ async function getPopularMovies(pagenum) {
         img.addEventListener('click', displayModal)
         let h3 = document.createElement('h3')
         h3.classList.add('film-title')
-        h3.innerHTML = movie.title
+        if (movie.title.length > 30) {
+            h3.innerHTML = movie.title.substr(0,30) + '...'  
+        } else {  
+            h3.innerHTML = movie.title
+        }
         let p = document.createElement('p')
         p.classList.add('film-year')
         p.innerHTML = movie.release_date.substr(0,4) 
@@ -39,7 +43,11 @@ async function getGenres() {
         let genresListDomEl = document.querySelector('.genre-list');
         let listItem = document.createElement('li');
         listItem.classList.add('genre');
+        if (genre.name === 'Science Fiction') {
+            listItem.innerHTML = 'Sci-Fi';    
+        } else {
         listItem.innerHTML = genre.name;
+        }
         listItem.setAttribute('data-genre-id', genre.id)
         listItem.addEventListener('click', getMovies)
         genresListDomEl.appendChild(listItem);
@@ -50,6 +58,13 @@ getGenres();
 
 ///////////// CHANGE GENRE ///////////////
 async function getMovies() {
+    let currentlySelected = document.querySelector('.selected-genre')
+    if (!currentlySelected) {
+    this.classList.add('selected-genre')
+    } else {
+        currentlySelected.classList.remove('selected-genre')
+        this.classList.add('selected-genre')
+    }
     let movies = [];
     for (i = 1; i < 3; i++) {
         let genreID = this.getAttribute('data-genre-id')
@@ -69,7 +84,11 @@ async function getMovies() {
         img.addEventListener('click', displayModal)
         let h3 = document.createElement('h3')
         h3.classList.add('film-title')
-        h3.innerHTML = movie.title
+        if (movie.title.length > 30) {
+            h3.innerHTML = movie.title.substr(0,30) + '...'  
+        } else {  
+            h3.innerHTML = movie.title
+        }
         let p = document.createElement('p')
         p.classList.add('film-year')
         p.innerHTML = movie.release_date.substr(0,4) 
@@ -98,7 +117,11 @@ async function searchMovies() {
         let poster = document.createElement('div');
         poster.classList.add("poster")
         let img = document.createElement('img')
+        if (movie.poster_path === null) {
+            img.src = "img/poster.jpg"
+        } else {
         img.src = 'https://image.tmdb.org/t/p/w500/' + movie.poster_path
+        }
         img.addEventListener('click', displayModal)
         let h3 = document.createElement('h3')
         h3.classList.add('film-title')
@@ -131,6 +154,13 @@ function clearPosterSection() {
 
 //////////////// MODAL //////////////////////
 let modal = document.querySelector(".poster-modal")
+modal.addEventListener('click', () => {
+    if (event.target.classList.contains('modal-image')) {
+        return
+    } else {
+        modal.style.display = 'none'   
+    }
+})
 
 // DISPLAY MODAL
 function displayModal() {
@@ -148,8 +178,8 @@ closeModal.addEventListener('click', () => modal.style.display = 'none')
 
 // // TO-DO
 
-// // -filter by clicking genre on side
-// // -search using search bar
+
 // // - infinite scroll api calls
 // error handling on async funcs
-// some posters dont return anything, do if statement to ignore if error 
+// add link to modal that opens max res version in new tab
+// make mobile and make a logo

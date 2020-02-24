@@ -10,18 +10,24 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="genre-nav">
-        <div class="logo"></div>
-        <div class="genres">
-            <ul class="genre-list">
-            </ul>
+    <header>
+        <div class="header-nav container">
+            <h1 class="branding">postr</h1>
+            <form autocomplete="off" action="" class="filter">
+                <i class="fas fa-search"></i>
+                <input autocomplete="off" type="text" id="search" placeholder="What are you looking for?">
+            </form>
         </div>
     </header>
     <div class="main-container">
-        <form action="" class="filter">
-            <i class="fas fa-search"></i>
-            <input type="text" id="search" placeholder="What are you looking for?">
-        </form>
+        <div class="genre-nav">
+            <div class="genres">
+                <ul class="genre-list">
+                </ul>
+                
+                <a target="_blank" href="https://github.com/MartEllis" class="github"><i class="fab fa-github"></i></a>   
+            </div>
+        </div>
         <section class="posters-main">
         </section>
     </div>
