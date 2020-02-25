@@ -32,6 +32,7 @@ async function getPopularMovies(pagenum) {
 }
 getPopularMovies(1);
 getPopularMovies(2);
+getPopularMovies(3);
 /////////////////// END DEFAULT PAGE POPULAR MOVIES /////////////
 
 /////////////////// GET LIST OF GENRES FOR SIDEBAR /////////////
@@ -176,9 +177,5 @@ closeModal.addEventListener('click', () => modal.style.display = 'none')
 //////////// END MODAL ///////////////////////
 
 // // TO-DO
-
-
-// // - infinite scroll api calls
-// error handling on async funcs
 // add link to modal that opens max res version in new tab
 // make mobile and make a logo

@@ -1,7 +1,6 @@
-$sidebarnavcolor: rgb(163, 197, 167);
-$sidebartextcolor: rgb(0,0,0);
-$searchbarcolor: rgb(53, 53, 53);
-$accentcolor: rgb(110, 0, 255);
+$main: #574b90;
+$accentcolor: #fc85ae;
+$background: rgba(248, 244, 244, 0.8);
 
 
 * {
@@ -13,13 +12,13 @@ $accentcolor: rgb(110, 0, 255);
 }
 
 body {
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 header {
     width: 100%;
     height: 6vh;
-    background-color: $searchbarcolor;
+    background-color: $main;
 
     .header-nav {
         display: flex;
@@ -28,16 +27,20 @@ header {
         height: 100%;
 
         .branding {
-            width: 20%;
-            background-color: $accentcolor;
-            color: rgba(255,255,255,0.8);
+            width: 10%;
+            color: #fc85ae;
+            margin-bottom: .5rem;
+            margin-left: 1rem;
+
+            // background-color: $accentcolor;
+            // color: rgba(255,255,255,0.8);
         }
     
         .filter {
             width: 80%;
             display: flex;
             align-items: center;
-            background-color: $searchbarcolor;
+            background-color: $main;
     
             .fa-search {
                 margin-left: 2rem;
@@ -46,10 +49,9 @@ header {
             }
     
             #search {
-                background-color: $searchbarcolor;
+                background-color: $main;
                 padding: .4rem;
                 border: none;
-                margin-left: .2rem;
                 font-size: 1rem;
                 color: rgb(243, 236, 236);
     
@@ -75,6 +77,7 @@ header {
 .main-container {
     display: flex;
     flex-direction: row;
+    background-color: $background;
 
     .genre-nav {
         height: 100vh;
@@ -83,6 +86,7 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+        position: fixed;
     
         .genres {
             flex-basis: 80%;
@@ -105,7 +109,6 @@ header {
                     font-size: 1.2rem;
                     display: inline-block;
                     cursor: pointer;
-                    color: $sidebartextcolor;
                     transition: ease-in .1s;
                     padding:.1rem 0;
     
@@ -125,6 +128,7 @@ header {
                 font-size: 2rem;
                 align-self: flex-end;
                 transition: ease-in 1s;
+                color: $accentcolor;
 
                 &:hover, &:active {
                     font-size: 3rem;
@@ -137,7 +141,7 @@ header {
         display: flex;
         flex-wrap: wrap;
         width: 85%;
-        margin: 2rem 2rem 0 0;
+        margin: 2rem 2rem 0 15%;
 
         .poster {
             flex-basis: 15%;

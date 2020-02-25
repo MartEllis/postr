@@ -6,14 +6,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
-body {
-  overflow: hidden;
-}
-
 header {
   width: 100%;
   height: 6vh;
-  background-color: #353535;
+  background-color: #574b90;
 }
 
 header .header-nav {
@@ -31,9 +27,10 @@ header .header-nav {
 }
 
 header .header-nav .branding {
-  width: 20%;
-  background-color: #6e00ff;
-  color: rgba(255, 255, 255, 0.8);
+  width: 10%;
+  color: #fc85ae;
+  margin-bottom: .5rem;
+  margin-left: 1rem;
 }
 
 header .header-nav .filter {
@@ -44,7 +41,7 @@ header .header-nav .filter {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #353535;
+  background-color: #574b90;
 }
 
 header .header-nav .filter .fa-search {
@@ -54,10 +51,9 @@ header .header-nav .filter .fa-search {
 }
 
 header .header-nav .filter #search {
-  background-color: #353535;
+  background-color: #574b90;
   padding: .4rem;
   border: none;
-  margin-left: .2rem;
   font-size: 1rem;
   color: #f3ecec;
 }
@@ -100,6 +96,7 @@ header .header-nav .filter ::placeholder {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background-color: rgba(248, 244, 244, 0.8);
 }
 
 .main-container .genre-nav {
@@ -118,6 +115,7 @@ header .header-nav .filter ::placeholder {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  position: fixed;
 }
 
 .main-container .genre-nav .genres {
@@ -155,7 +153,6 @@ header .header-nav .filter ::placeholder {
   font-size: 1.2rem;
   display: inline-block;
   cursor: pointer;
-  color: black;
   -webkit-transition: ease-in .1s;
   transition: ease-in .1s;
   padding: .1rem 0;
@@ -163,12 +160,12 @@ header .header-nav .filter ::placeholder {
 
 .main-container .genre-nav .genres .genre-list .genre:hover {
   font-weight: 900;
-  color: #6e00ff;
+  color: #fc85ae;
 }
 
 .main-container .genre-nav .genres .genre-list .selected-genre {
   font-size: 1.6rem;
-  color: #6e00ff;
+  color: #fc85ae;
 }
 
 .main-container .genre-nav .genres .github {
@@ -177,6 +174,7 @@ header .header-nav .filter ::placeholder {
       align-self: flex-end;
   -webkit-transition: ease-in 1s;
   transition: ease-in 1s;
+  color: #fc85ae;
 }
 
 .main-container .genre-nav .genres .github:hover, .main-container .genre-nav .genres .github:active {
@@ -190,7 +188,7 @@ header .header-nav .filter ::placeholder {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 85%;
-  margin: 2rem 2rem 0 0;
+  margin: 2rem 2rem 0 15%;
 }
 
 .main-container .posters-main .poster {
